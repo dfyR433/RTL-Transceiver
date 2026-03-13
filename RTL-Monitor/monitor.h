@@ -39,8 +39,11 @@ static const uint8_t CHANNEL_LIST[] = {
 #define RX_PIN                   _PB_4
 #define BAUD_RATE                2000000U
 
-/* Timestamp source selection */
+/* Timestamp source selection – guard against redefinition */
+#ifndef USE_DWT_CYCCNT
 #define USE_DWT_CYCCNT                    /* Cortex‑M DWT cycle counter (ns) */
+#endif
+
 // #define PLATFORM_TIMER_US              /* external microsecond timer (converted to ns) */
 // (if none defined, fallback to FreeRTOS ticks – ms resolution)
 

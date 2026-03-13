@@ -11,10 +11,13 @@ set(private_compile_options)
 ameba_list_append(private_sources
     app_example.c
     monitor.c
+    inject.c
 )
 
-# If you need private include directories, uncomment and add them:
-# ameba_list_append(private_includes ${CMAKE_CURRENT_SOURCE_DIR})
+# Private definitions (if any):
+ameba_list_append(private_definitions
+    USE_DWT_CYCCNT
+)
 
 # Private definitions (if any):
 # ameba_list_append(private_definitions SOME_DEFINE)
